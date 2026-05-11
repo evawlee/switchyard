@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "switchyard"
+version = "0.5.0"
+description = "internal pipeline orchestrator"
+requires-python = ">=3.10"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-json-report",
+]
+
+[tool.setuptools.packages.find]
+include = ["switchyard*"]
+
+[tool.pytest.ini_options]
+python_files = ["test_*.py", "__eval_*_sec.py"]
